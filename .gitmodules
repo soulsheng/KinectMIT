@@ -4,3 +4,6 @@
 [submodule "sample/OpenNI"]
 	path = sample/OpenNI
 	url = https://github.com/soulsheng/OpenNI.git
+[submodule "sample/KinectControl"]
+	path = sample/KinectControl
+	url = https://github.com/soulsheng/KinectControl.git
