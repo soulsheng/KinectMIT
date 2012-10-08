@@ -1,0 +1,6 @@
+[submodule "sample/SampleAppSinbad-ogre"]
+	path = sample/SampleAppSinbad-ogre
+	url = https://github.com/soulsheng/SampleAppSinbad.git
+[submodule "sample/OpenNI"]
+	path = sample/OpenNI
+	url = https://github.com/soulsheng/OpenNI.git
