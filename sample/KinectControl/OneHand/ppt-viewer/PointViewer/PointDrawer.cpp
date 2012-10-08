@@ -172,8 +172,8 @@ void XnVPointDrawer::OnPointUpdate(const XnVHandPointContext* cxt)
 		m_ptStart.x=point.x;
 		m_ptStart.y=point.y;
 		m_zOrigin=ptProjective.Z;
-		keybd_event(VK_F5,0,0,0);
-		keybd_event(VK_F5,0,KEYEVENTF_KEYUP,0);
+		//keybd_event(VK_F5,0,0,0);
+		//keybd_event(VK_F5,0,KEYEVENTF_KEYUP,0);
 		m_bSelect=FALSE;
 	}
 
@@ -181,7 +181,7 @@ void XnVPointDrawer::OnPointUpdate(const XnVHandPointContext* cxt)
 	int yDis=point.y-m_ptStart.y;
 	double zDis=ptProjective.Z-m_zOrigin;
 
-
+#if 0
 	//上、下方向键
 	if (yDis<(-200))
 	{
@@ -225,14 +225,14 @@ void XnVPointDrawer::OnPointUpdate(const XnVHandPointContext* cxt)
 			m_bYDis=TRUE;
 		}
 	}
-
+#endif
 	//左、右方向键
 	if (xDis<(-100))
 	{
 		if (m_bXDis)
 		{
-			keybd_event(VK_RIGHT,0,0,0);
-			keybd_event(VK_RIGHT,0,KEYEVENTF_KEYUP,0);
+			keybd_event(VK_LEFT,0,0,0);
+			keybd_event(VK_LEFT,0,KEYEVENTF_KEYUP,0);
 			printf("Up success!");
 			m_bRightToLeft=FALSE;
 			m_bXDis=FALSE;
@@ -249,8 +249,8 @@ void XnVPointDrawer::OnPointUpdate(const XnVHandPointContext* cxt)
 			{
 				if (m_bRightToLeft)
 				{
-					keybd_event(VK_LEFT,0,0,0);
-					keybd_event(VK_LEFT,0,KEYEVENTF_KEYUP,0);
+					keybd_event(VK_RIGHT,0,0,0);
+					keybd_event(VK_RIGHT,0,KEYEVENTF_KEYUP,0);
 					printf("Down success!");
 					m_bXDis=FALSE;
 				} 
@@ -288,7 +288,7 @@ void XnVPointDrawer::OnPointUpdate(const XnVHandPointContext* cxt)
 	{
 		m_bXDis=TRUE;
 	}
-#endif
+
 	//shift+F5功能
 	if (zDis<-100.0)
 	{
@@ -309,7 +309,7 @@ void XnVPointDrawer::OnPointUpdate(const XnVHandPointContext* cxt)
 	{
 		m_bZDis=TRUE;
 	}
-    
+#endif 
 }
 
 // Handle destruction of an existing hand
